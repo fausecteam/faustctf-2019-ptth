@@ -1,0 +1,22 @@
+[Unit]
+Description=FAUST CTF ptth Service
+
+[Service]
+User=ptth
+Group=ptth
+
+ExecStart=/srv/ptth/bin/ptth --wwwpath=/srv/ptth/data --port=31337
+Restart=on-failure
+
+CPUQuota=100%
+TasksMax=64
+MemoryMax=1024M
+
+#PrivateTmp=yes
+#ProtectControlGroups=yes
+#ProtectHome=yes
+#ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,19 @@
+name: ptth
+slug: ptth
+authors:
+  - dex <marcel.busch@fau.de>
+
+install:
+  debian_packages:
+    - build-essential
+  postinst_commands:
+    - systemctl enable ptth.service
+  prevent_outgoing_connections: True
+
+checker:
+  module: ptth
+  class: Ptth
+  debian_packages:
+    - python3
+  pip_packages:
+    - nclib
